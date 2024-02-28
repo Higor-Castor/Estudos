@@ -1,5 +1,4 @@
-# Nome: Herik do Santos Ferreira RGM: 11231102428 Turma: C
-# Nome: Higor de Castro Venancio da Silva RGM: 11231102199 Turma: C
+
 import os, time
 
 import json
