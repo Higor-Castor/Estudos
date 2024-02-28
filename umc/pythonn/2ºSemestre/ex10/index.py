@@ -1,5 +1,4 @@
-# Nome: Henrique dos santos Ferreira RGM: 11231102428
-# Nome: Higor de Castro Venâncio da Silva RGM: 11231102199
+
 
 # Para poder rodar o modulo em MYSQL não precisa criar nenhuma tabela no servidor MYSQL, pois a tabelas ja foram criadas no proprio codigo PYTHON.  so presisa colocar os seguintes comandos no servidor MYSQL: "create database escola;"  "use escola;"
 # Para fazer a conexão com o servidor precisa-se do  host,user,password,database. Para atribuir essa conexão precisa colocar essas informaçõe na linha 429 , 430 e 431
