@@ -1,5 +1,4 @@
-# Nome: Herik do Santos Ferreira RGM: 11231102428 Turma: C
-# Nome: Higor de Castro Venancio da Silva RGM: 11231102199 Turma: C
+
 import os, time
 
 import json
@@ -192,6 +191,17 @@ class ModuloAcademico:
         self.listaProf = []
         self.listaDisciplina = []
         if os.path.isfile('alunos.json'):
+          self.RecuperarAlunos()
+
+        if os.path.isfile('professor.json'):
+          self.recuperarProfessores()
+
+        if os.path.isfile('disciplina.json'):
+          self.recuperarDisciplinas()
+
+            
+
+    def RecuperarAlunos (self):
           self.opcao = 1
           with open("alunos.json", 'r') as arquivo:
               lista_de_jsons_text = json.load(arquivo)
@@ -206,8 +216,8 @@ class ModuloAcademico:
               rgm = int(dic2["rgm"])
 
               self.listaAlunos.append(Aluno(idade, altura, peso, nome, rgm))
-
-        if os.path.isfile('professor.json'):
+      
+    def recuperarProfessores (self ) :
             self.opcao = 6
             with open("professor.json", 'r') as arquivo:
                 lista_de_jsons_text = json.load(arquivo)
@@ -222,26 +232,21 @@ class ModuloAcademico:
 
                 self.listaProf.append(Professor(idade, altura, peso, nome, matricula))
 
-        if os.path.isfile('disciplina.json'):
+
+    def recuperarDisciplinas (self):
             self.opcao = 10
             with open("disciplina.json", 'r') as arquivo:
                 lista_de_jsons_text = json.load(arquivo)
             
             for text in lista_de_jsons_text:
                 dic2 = json.loads(text)
-
                 codigo = dic2["codigo"]
                 nome = dic2["nome"]
                 cargaHoraria = int(dic2["cargaHoraria"]) 
                 turma = dic2["turma"] 
                 notaMinima = float(dic2["notaMinima"])
-
                 self.listaDisciplina.append(disciplina(codigo, nome, cargaHoraria, turma, notaMinima))
 
-            
-
-      
-                
     def salvarAluno (self):
         lista = []
         arquivo = open("alunos.json", 'w')
@@ -601,13 +606,15 @@ class ModuloAcademico:
 
         print("|############################################################|")
 
-        print("|                        OOP PYTHON                          | ")
+        print("|                        Cadastro Academico                  | ")
 
         print("|############################################################|")
 
         print("")
 
         print("")
+
+        print("|                        Aluno                                | ")
 
         print("1) Cadastrar Alunos:")
 
@@ -618,7 +625,9 @@ class ModuloAcademico:
         print("4) Remover alunos:")
         
         print("5) Autalizar Aluno:")
-        
+
+        print("|                        Professor                                | ")
+
         print("6) Cadastrar Professores:")
         
         print("7) Imprimir Professores: ")
@@ -626,7 +635,9 @@ class ModuloAcademico:
         print("8) Remover Professores:")
         
         print("9) Autalizar Professor:")
-        
+      
+        print("|                        Curso                                | ")
+ 
         print("10) Cadastrar Curso:")
         
         print("11) Imprimir Curso:")
